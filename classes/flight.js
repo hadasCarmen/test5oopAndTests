@@ -1,7 +1,7 @@
 import { RegularTicket } from "./regularTicket.js";
 import { Student } from "./studentPassengar.js";
 import { VipTicket } from "./vipTicket.js";
-
+import {Baggege} from "./baggage.js"
 export class Flight {
   constructor(
     flightName,
@@ -9,7 +9,8 @@ export class Flight {
     flightNumber,
     maxPassengers,
     priceRegularTicket,
-    priceVipTicket
+    priceVipTicket,
+    maxWeight
   ) {
     this.flightName = flightName;
     this.airline = airline;
@@ -19,7 +20,17 @@ export class Flight {
     this.priceRegularTicket = priceRegularTicket;
     this.priceVipTicket = priceVipTicket;
     this.listTickets = new Array(maxPassengers);
+    this.maxWeight=maxWeight
+
   }
+  addBagg(baggage){
+        if (this.maxWeight-baggage.weight<0) {
+            return false
+        }
+        else{
+            this.maxWeight-baggage.weight
+        }
+    }
   buyTicket(passenger) {
     let founfRegularTicket = false;
     let count = 1;
