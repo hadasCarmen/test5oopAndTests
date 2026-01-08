@@ -1,7 +1,7 @@
 import { RegularTicket } from "./regularTicket.js";
 import { Student } from "./studentPassengar.js";
 import { VipTicket } from "./vipTicket.js";
-import { Baggege } from "./baggage.js";
+import { Baggage } from "./baggage.js";
 export class Flight {
   constructor(
     flightName,
