@@ -37,6 +37,7 @@ export class Flight {
               passenger.amount -= ticket.price;
             } else {
               console.log("you dont have enouf money");
+              return false
             }
           }
         }
@@ -56,6 +57,7 @@ export class Flight {
               passenger.amount -= ticket.price * 0.8;
             } else {
               console.log("you dont have enouf money");
+              return false
             }
           } else {
             if (passenger.amount - ticket.price >= 0) {
@@ -63,6 +65,7 @@ export class Flight {
               passenger.amount -= ticket.price;
             } else {
               console.log("you dont have enouf money");
+              return false
             }
           }
         }
