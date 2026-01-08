@@ -22,3 +22,23 @@ test("should return false", () => {
   );
   assert.ok(!airport.flight2.buyTicket(passenger));
 });
+test("The passengers money is reduced by the correct ticket price", () => {
+    const flight1 = new Flight("one", "arkia", "one", 50, 100, 150);
+  const flight2 = new Flight("two", "elal", "two", 10, 15, 20);
+  const flight3 = new Flight("three", "wizz", "three", 5, 50, 500);
+  const airport = new Airport(flight1, flight2, flight3);
+
+  const student = new Student("hadas", 213916075, 200, "lev");
+
+  const passenger = new RegularPassenger(
+    "elazar",
+    315466219,
+    150,
+    "army",
+    false
+  );
+  const copy = { ...passenger };
+
+  airport.flight2.buyTicket(passenger)
+  assert.ok(!(copy.amount===passenger.amount));
+});
