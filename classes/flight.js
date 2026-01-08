@@ -1,7 +1,7 @@
 import { RegularTicket } from "./regularTicket.js";
 import { Student } from "./studentPassengar.js";
 import { VipTicket } from "./vipTicket.js";
-import {Baggege} from "./baggage.js"
+import { Baggege } from "./baggage.js";
 export class Flight {
   constructor(
     flightName,
@@ -20,17 +20,15 @@ export class Flight {
     this.priceRegularTicket = priceRegularTicket;
     this.priceVipTicket = priceVipTicket;
     this.listTickets = new Array(maxPassengers);
-    this.maxWeight=maxWeight
-
+    this.maxWeight = maxWeight;
   }
-  addBagg(baggage){
-        if (this.maxWeight-baggage.weight<0) {
-            return false
-        }
-        else{
-            this.maxWeight-baggage.weight
-        }
+  addBagg(baggage) {
+    if (this.maxWeight - baggage.weight < 0) {
+      return false;
+    } else {
+      this.maxWeight - baggage.weight;
     }
+  }
   buyTicket(passenger) {
     let founfRegularTicket = false;
     let count = 1;
@@ -48,7 +46,7 @@ export class Flight {
               passenger.amount -= ticket.price;
             } else {
               console.log("you dont have enouf money");
-              return false
+              return false;
             }
           }
         }
@@ -68,7 +66,7 @@ export class Flight {
               passenger.amount -= ticket.price * 0.8;
             } else {
               console.log("you dont have enouf money");
-              return false
+              return false;
             }
           } else {
             if (passenger.amount - ticket.price >= 0) {
@@ -76,7 +74,7 @@ export class Flight {
               passenger.amount -= ticket.price;
             } else {
               console.log("you dont have enouf money");
-              return false
+              return false;
             }
           }
         }
