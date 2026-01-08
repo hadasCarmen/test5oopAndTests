@@ -23,7 +23,7 @@ test("should return false", () => {
   assert.ok(!airport.flight2.buyTicket(passenger));
 });
 test("The passengers money is reduced by the correct ticket price", () => {
-    const flight1 = new Flight("one", "arkia", "one", 50, 100, 150);
+  const flight1 = new Flight("one", "arkia", "one", 50, 100, 150);
   const flight2 = new Flight("two", "elal", "two", 10, 15, 20);
   const flight3 = new Flight("three", "wizz", "three", 5, 50, 500);
   const airport = new Airport(flight1, flight2, flight3);
@@ -39,12 +39,12 @@ test("The passengers money is reduced by the correct ticket price", () => {
   );
   const copy = { ...passenger };
 
-  airport.flight2.buyTicket(passenger)
-  assert.ok(!(copy.amount===passenger.amount));
+  airport.flight2.buyTicket(passenger);
+  assert.ok(!(copy.amount === passenger.amount));
 });
 
 test("The ticket owner name matches the passenger name", () => {
-    const flight1 = new Flight("one", "arkia", "one", 50, 100, 150);
+  const flight1 = new Flight("one", "arkia", "one", 50, 100, 150);
   const flight2 = new Flight("two", "elal", "two", 10, 15, 20);
   const flight3 = new Flight("three", "wizz", "three", 5, 50, 500);
   const airport = new Airport(flight1, flight2, flight3);
@@ -58,9 +58,10 @@ test("The ticket owner name matches the passenger name", () => {
     "army",
     false
   );
-  
 
-  airport.flight2.buyTicket(passenger)
-  const ticket=airport.flight2.listTickets.find((ticket)=>ticket.ownerName!==null)
-  assert.ok(ticket.ownerName===passenger.name);
+  airport.flight2.buyTicket(passenger);
+  const ticket = airport.flight2.listTickets.find(
+    (ticket) => ticket.ownerName !== null
+  );
+  assert.ok(ticket.ownerName === passenger.name);
 });
